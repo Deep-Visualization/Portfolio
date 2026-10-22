@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Deepthi Kavitha · Portfolio</title>
-    <meta name="description" content="Deepthi Kavitha: front-end and data visualization work that makes ocean, fisheries and environmental data explorable to everyone.">
+    <meta name="description" content="Deepthi Kavitha: front-end and data visualization work that makes ocean, environmental and scientific data explorable to everyone.">
     <link rel="icon" href="img/Profile%20Picture.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -219,9 +219,9 @@
 <section class="hero" aria-labelledby="hero-title">
     <div class="wrap">
         <div>
-            <p class="eyebrow">Front-end &amp; data visualization · Ocean and fisheries data</p>
+            <p class="eyebrow">Front-end &amp; data visualization · Ocean, environmental and scientific data</p>
             <h1 id="hero-title">I love to make data <em>explorable</em> to everyone.</h1>
-            <p class="intro">I'm Deepthi, a recent Computer and Information Science master's graduate. I turn complex marine and environmental datasets into dashboards, filters and visual tools that researchers, stakeholders and curious people can actually use.</p>
+            <p class="intro">I'm Deepthi, a recent Computer and Information Science master's graduate. I turn complex ocean, environmental and scientific datasets into dashboards, filters and interactive web pages that researchers, stakeholders and curious people can actually use.</p>
             <div class="buttons">
                 <a class="btn solid" href="#work">See my work</a>
                 <a class="btn line" href="#contact">Get in touch</a>
@@ -235,7 +235,7 @@
 
 <div class="stats">
     <div class="wrap">
-        <div class="stat"><b>70+</b><span>years of U.S. offshore fisheries landings explored in one dashboard</span></div>
+        <div class="stat"><b>75</b><span>years of U.S. commercial fisheries landings (1950–2024) in one interactive web dashboard</span></div>
         <div class="stat"><b>8</b><span>interactive charts and filters built for fisheries research at ROSA</span></div>
         <div class="stat"><b>M.S.</b><span>Computer &amp; Information Science, UMass Dartmouth, 2026</span></div>
     </div>
@@ -248,8 +248,8 @@
         <img src="img/Profile%20Picture.jpeg" alt="Photo of Deepthi">
         <div class="text">
             <p class="eyebrow" id="about-title">About me</p>
-            <p class="lead">Ocean data matters to a lot of people, and most of them will never open a spreadsheet. I build the views that let them explore it.</p>
-            <p>I love working with environmental and ocean-related datasets and making them more accessible. At the Responsible Offshore Science Alliance, I cleaned FishFORWRD fisheries research data and designed Research Gaps Analysis dashboards that link research categories, Summarized Research Needs, funding sources and geography.</p>
+            <p class="lead">Ocean, environmental and scientific data matter to a lot of people, and most of them will never open a spreadsheet. I build the views that let them explore it.</p>
+            <p>I love working with ocean, environmental and scientific datasets and making them more accessible: fisheries research and landings, live weather, accident records and publication networks. At the Responsible Offshore Science Alliance, I cleaned FishFORWRD fisheries research data and designed Research Gaps Analysis dashboards that link research categories, Summarized Research Needs, funding sources and geography.</p>
             <p>I care about the whole path: cleaning messy data, choosing the right chart, building filters people understand, and handing over tools that teams can keep updating without me.</p>
         </div>
     </div>
@@ -263,7 +263,7 @@
                 <p class="eyebrow">Selected work</p>
                 <h2 class="section-title" id="work-title">Data you can explore</h2>
             </div>
-            <p>Interactive dashboards and web visualizations, ordered by how closely they relate to front-end web development.</p>
+            <p>Interactive dashboards and web pages built on ocean, environmental and scientific data, most of them open in the browser with nothing to install.</p>
         </div>
 
         <!-- ---------- ROSA ---------- -->
@@ -303,9 +303,34 @@
         <!-- ---------- Front-end ---------- -->
         <div class="group-head">
             <h3>Front-end &amp; interactive web visualization</h3>
-            <p>Browser-based tools in HTML, CSS and JavaScript with D3.js</p>
+            <p>Browser-based tools in HTML, CSS and JavaScript with D3.js, hosted on GitHub Pages</p>
         </div>
         <div class="grid">
+            <article class="card">
+                <div class="shot"><img src="img/Offshore_fisheries.png" alt="Offshore Fisheries Analytics Dashboard"></div>
+                <div class="meta"><span>Ocean data · Web dashboard</span><span>D3.js v7</span></div>
+                <h3>Offshore Fisheries Analytics Dashboard</h3>
+                <p>75 years of NOAA Fisheries commercial landings (1950–2024, 136,000+ records) explored by state, year range and pounds or dollars. The page reads the raw CSV in the browser and redraws summary cards, a trend line, a top-10 states chart and a U.S. map with every filter change. It started as a Streamlit app in Python, which is still in the repository.</p>
+                <div class="tags"><span class="tag">D3.js</span><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">SQL</span></div>
+                <a class="more" href="https://deep-visualization.github.io/Offshore_fisheries_analysis_dashboard/">Open the live dashboard →</a>
+                <a class="more" href="https://github.com/Deep-Visualization/Offshore_fisheries_analysis_dashboard">View code on GitHub →</a>
+            </article>
+            <article class="card">
+                <div class="shot"><img src="img/Nodes viz.png" alt="Publication Network"></div>
+                <div class="meta"><span>Scientific data · Network visualization</span><span>D3.js · NetworkX</span></div>
+                <h3>Publication Network</h3>
+                <p>A force-directed graph of 570 Scopus research publications. Nodes are sized by their number of links, hovering shows a publication's authors and affiliations and highlights publications that share an affiliation, and sliders adjust the charge, collision and link forces while the view zooms to fit. NetworkX in Python prepares the JSON.</p>
+                <div class="tags"><span class="tag">D3.js</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">NetworkX</span><span class="tag">JSON</span></div>
+                <a class="more" href="https://github.com/Deep-Visualization/Force-Layout-Visualization">View code on GitHub →</a>
+            </article>
+            <article class="card">
+                <div class="shot"><img src="img/Document Explorer.png" alt="Document Explorer"></div>
+                <div class="meta"><span>Web app · Text analysis</span><span>D3.js v7 · jQuery</span></div>
+                <h3>Document Explorer</h3>
+                <p>A browser tool for exploring a document collection. A Python pipeline clusters the documents and lays them out with MDS; the page shows a cluster bubble chart and an MDS scatter plot, with search, cluster filters, drag-to-reorder, a reading workspace and a dark mode.</p>
+                <div class="tags"><span class="tag">D3.js</span><span class="tag">jQuery</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">JSON</span></div>
+                <a class="more" href="https://github.com/Deep-Visualization/Document-visualization-tool">View code on GitHub →</a>
+            </article>
             <article class="card">
                 <div class="shot"><img src="img/Salary Benchmarking.png" alt="Salary Benchmarking"></div>
                 <div class="meta"><span>Web visualization</span><span>D3.js v7</span></div>
@@ -314,43 +339,21 @@
                 <div class="tags"><span class="tag">D3.js</span><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">CSV</span><span class="tag">Python</span></div>
                 <a class="more" href="https://github.com/Deep-Visualization/Salary-Benchmarking-for-Data-Domain-Jobs">View code on GitHub →</a>
             </article>
-            <article class="card">
-                <div class="shot"><img src="img/Document Explorer.png" alt="Document Exploree"></div>
-                <div class="meta"><span>Web app · Text analysis</span><span>D3.js v7 · jQuery</span></div>
-                <h3>Document Explorer</h3>
-                <p>A browser tool for exploring a document collection. A Python pipeline clusters the documents and lays them out with MDS; the page shows a cluster bubble chart and an MDS scatter plot, with search, cluster filters, drag-to-reorder, a reading workspace and a dark mode.</p>
-                <div class="tags"><span class="tag">D3.js</span><span class="tag">jQuery</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">JSON</span></div>
-                <a class="more" href="https://github.com/Deep-Visualization/Document-visualization-tool">View code on GitHub →</a>
-            </article>
-            <article class="card">
-                <div class="shot"><img src="img/Nodes viz.png" alt="Nodes viz"></div>
-                <div class="meta"><span>Network visualization</span><span>D3.js · NetworkX</span></div>
-                <h3>Publication Network</h3>
-                <p>A force-directed graph of a Scopus publication network. Nodes are sized by connections, the view zooms, and hovering an author shows a tooltip and highlights collaborators from the same affiliations. NetworkX in Python prepares the JSON.</p>
-                <div class="tags"><span class="tag">D3.js</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">NetworkX</span><span class="tag">JSON</span></div>
-                <a class="more" href="https://github.com/Deep-Visualization/Force-Layout-Visualization">View code on GitHub →</a>
-            </article>
-            <article class="card">
-                <div class="shot"><img src="img/Offshore_fisheries.png" alt="Offshore_fisheries"></div>
-                <div class="meta"><span>Data app · Fisheries</span><span>Feb – Mar 2026</span></div>
-                <h3>Offshore Fisheries Analytics Dashboard</h3>
-                <p>An interactive Streamlit dashboard analyzing 70+ years of U.S. offshore fisheries landings, with dynamic filters for regional, species-level and long-term trends.</p>
-                <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Streamlit</span><span class="tag">Pandas</span><span class="tag">Plotly</span></div>
-            </article>
         </div>
 
         <!-- ---------- Web apps & ML ---------- -->
         <div class="group-head">
             <h3>Web apps &amp; machine learning</h3>
-            <p>Models served through web interfaces and dashboards</p>
+            <p>Models and data served through web pages and dashboards</p>
         </div>
         <div class="grid">
             <article class="card">
                 <div class="shot"><img src="img/Aviation Accident.png" alt="Aviation Accident"></div>
-                <div class="meta"><span>Full-stack project</span><span>Sep 2025 – Apr 2026</span></div>
+                <div class="meta"><span>Master's project · Weather and safety data</span><span>Sep 2025 – Apr 2026</span></div>
                 <h3>Aviation Accident Risk Prediction</h3>
-                <p>A Flask web app where users enter flight details and get a damage-risk prediction, enriched with live weather from the OpenWeatherMap API. A Random Forest with SMOTE is trained on NTSB data, plus Streamlit and Power BI dashboards for accident trends.</p>
-                <div class="tags"><span class="tag">Flask</span><span class="tag">OpenWeatherMap API</span><span class="tag">Streamlit</span><span class="tag">Power BI</span><span class="tag">Scikit-learn</span></div>
+                <p>Combines live weather with 87,944 NTSB accident records (1982–2022). The interactive web page takes a city and aircraft type, fetches current conditions from the Open-Meteo API, explains a weather risk score factor by factor, and compares fatal-accident rates in visual and instrument conditions across aircraft groups. The original Flask app uses OpenWeatherMap and a Random Forest with SMOTE, with Streamlit and Power BI dashboards for accident trends.</p>
+                <div class="tags"><span class="tag">D3.js</span><span class="tag">JavaScript</span><span class="tag">Open-Meteo API</span><span class="tag">Flask</span><span class="tag">Scikit-learn</span><span class="tag">Power BI</span></div>
+                <a class="more" href="https://deep-visualization.github.io/Aviation_Accident_Detection/">Open the live web page →</a>
                 <a class="more" href="https://github.com/Deep-Visualization/Aviation_Accident_Detection">View code on GitHub →</a>
             </article>
             <article class="card">
@@ -378,21 +381,21 @@
     <div class="wrap">
         <div class="section-head">
             <div>
-                <p class="eyebrow">For ocean data teams</p>
+                <p class="eyebrow">For ocean, environmental and science teams</p>
                 <h2 class="section-title" id="bring-title">What I bring</h2>
             </div>
-            <p>Teams that build web tools for ocean observing, fisheries and community science need people who understand both the data and the people using it.</p>
+            <p>Teams that build web tools for ocean observing, environmental monitoring and science need people who understand both the data and the people using it.</p>
         </div>
         <div class="pillars">
             <div class="pillar">
                 <h3>Visualizations people can use</h3>
                 <p>Interactive charts, filters and dashboards designed for researchers, stakeholders and broader audiences, not just analysts.</p>
-                <p class="proof">ROSA dashboards · D3.js (Salary Benchmarking, Document Explorer, Publication Network) · Plotly · Power BI · Streamlit</p>
+                <p class="proof">ROSA dashboards · D3.js (Offshore Fisheries, Aviation Risk, Publication Network, Document Explorer, Salary Benchmarking) · Plotly · Power BI · Streamlit</p>
             </div>
             <div class="pillar">
                 <h3>Web and API foundations</h3>
-                <p>Browser tools in HTML, CSS and JavaScript that load CSV and JSON, and a Flask web app that combines an external weather API with a trained model to serve real-time predictions.</p>
-                <p class="proof">JavaScript · HTML · CSS · D3.js · jQuery · Flask · OpenWeatherMap API</p>
+                <p>Static web pages in HTML, CSS and JavaScript that load CSV and JSON and call a live weather API from the browser, hosted on GitHub Pages, plus a Flask web app that combines a weather API with a trained model.</p>
+                <p class="proof">JavaScript · HTML · CSS · D3.js · jQuery · Open-Meteo API · Flask · OpenWeatherMap API · GitHub Pages</p>
             </div>
             <div class="pillar">
                 <h3>Data that's ready to display</h3>
@@ -400,9 +403,9 @@
                 <p class="proof">Python · SQL · PostgreSQL · Pandas · Power Query · OpenRefine</p>
             </div>
             <div class="pillar">
-                <h3>Ocean and fisheries context</h3>
-                <p>Hands-on work with fisheries research data and long-term landings, and ongoing learning in ocean science.</p>
-                <p class="proof">ROSA FishFORWRD · 70+ years of landings data · RWSC Oceanographic Modeling Webinar</p>
+                <h3>Ocean, environmental and scientific context</h3>
+                <p>Hands-on work with fisheries research data, long-term landings, live weather and accident records, and research publication networks, plus ongoing learning in ocean science.</p>
+                <p class="proof">ROSA FishFORWRD · 75 years of NOAA landings · NTSB records with live weather · Scopus publications · RWSC Oceanographic Modeling Webinar</p>
             </div>
             <div class="pillar">
                 <h3>Tools teams can maintain</h3>
@@ -510,7 +513,7 @@
 <section class="contact" id="contact" aria-labelledby="contact-title">
     <div class="wrap">
         <p class="eyebrow">Contact</p>
-        <h2 id="contact-title">Let's make ocean data <em>explorable.</em></h2>
+        <h2 id="contact-title">Let's make scientific data <em>explorable.</em></h2>
         <div class="buttons" style="margin-top:0">
             <a class="btn solid" href="mailto:gkdeepthigokuldhas@gmail.com">Email me</a>
             <a class="btn line" href="My Resume/Deepthi_Kavitha_Resume.pdf">Download resume</a>
