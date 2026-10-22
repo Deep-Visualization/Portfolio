@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Deepthi Kavitha · Portfolio</title>
+    <meta name="description" content="Deepthi Kavitha: front-end and data visualization work that makes ocean, fisheries and environmental data explorable to everyone.">
+    <link rel="icon" href="img/Profile%20Picture.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+    <style>
+       
+        :root {
+            --beige:     #EDE3D6;  /* page background, like the stem */
+            --cream:     #FAF6F0;  /* light sections and cards */
+            --taupe:     #A8907C;  /* lines and borders, like the cap */
+            --cap-brown: #7A5A45;  /* links and accents */
+            --gill:      #5E4A3D;  /* headings */
+            --soil:      #3B2F27;  /* body text and dark sections */
+            --spore:     #D9C6B3;  /* accent text on dark sections */
+
+            --display: "Bricolage Grotesque", "Arial Black", "Helvetica Neue", Arial, sans-serif;
+            --body: "Figtree", "Helvetica Neue", Arial, sans-serif;
+            --gutter: max(20px, env(safe-area-inset-left, 0px));
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+        @media (max-width: 820px) { html { scroll-padding-top: 100px; } }
+        body {
+            margin: 0;
+            background-color: var(--beige);
+            color: var(--soil);
+            font-family: var(--body);
+            font-size: 17px;
+            line-height: 1.6;
+        }
+        img { max-width: 100%; display: block; }
+        a { color: var(--cap-brown); text-underline-offset: 3px; }
+        a:hover { color: var(--soil); }
+        :focus-visible { outline: 2px solid var(--cap-brown); outline-offset: 3px; }
+        h1, h2, h3 { font-family: var(--display); color: var(--gill); margin: 0; line-height: 1.05; text-wrap: balance; }
+        p { margin: 0; }
+
+        .wrap { max-width: 1160px; margin: 0 auto; padding-left: var(--gutter); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+        section { padding-block: 96px; }
+        .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--cap-brown); }
+        .section-title { font-size: clamp(36px, 6vw, 64px); font-weight: 800; letter-spacing: -.02em; margin-top: 10px; }
+        .section-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px 40px; margin-bottom: 48px; }
+        .section-head p { max-width: 46ch; color: var(--gill); }
+
+        /* ---------- Top bar ---------- */
+        .topbar { position: sticky; top: 0; z-index: 10; background: var(--soil); color: var(--cream); }
+        .topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; }
+        .logo { font-family: var(--display); font-weight: 800; font-size: 20px; color: var(--cream); text-decoration: none; letter-spacing: -.01em; }
+        .logo span { color: var(--spore); }
+        .nav { display: flex; align-items: center; gap: 4px; list-style: none; margin: 0; padding: 0; }
+        .nav a { color: var(--cream); text-decoration: none; font-size: 15px; font-weight: 500; padding: 6px 12px; border-radius: 999px; }
+        .nav a:hover { background: rgba(250, 246, 240, .12); color: var(--cream); }
+        .topbar .wrap > .nav { margin-left: auto; }
+        .cv { color: var(--cream); text-decoration: none; font-size: 15px; font-weight: 500; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--spore); }
+        .cv:hover { background: var(--cream); color: var(--soil); }
+        /* Narrow screens: same links, moved to a second row that scrolls sideways if needed */
+        @media (max-width: 820px) {
+            .topbar .wrap { flex-wrap: wrap; row-gap: 8px; padding-block: 12px 10px; }
+            .nav { order: 3; width: 100%; overflow-x: auto; scrollbar-width: none; margin-left: -10px !important; }
+            .cv { font-size: 14px; }
+            .nav::-webkit-scrollbar { display: none; }
+            .nav a { white-space: nowrap; font-size: 14px; padding: 6px 10px; }
+        }
+
+        /* ---------- Hero (dark) ---------- */
+        .hero { background: var(--soil); color: var(--cream); padding-block: 64px 0; overflow: hidden; }
+        .hero .wrap { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 48px; align-items: end; }
+        .hero .eyebrow { color: var(--spore); }
+        .hero h1 { color: var(--cream); font-size: clamp(44px, 7.4vw, 96px); font-weight: 800; letter-spacing: -.03em; margin: 18px 0 26px; }
+        .hero h1 em { font-style: normal; color: var(--spore); }
+        .hero .intro { font-size: 19px; max-width: 54ch; color: #E9DFD3; }
+        .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin: 32px 0 64px; }
+        .btn { display: inline-block; font-weight: 600; font-size: 16px; text-decoration: none; padding: 13px 22px; border-radius: 999px; border: 1.5px solid currentColor; }
+        .btn.solid { background: var(--cream); color: var(--soil); border-color: var(--cream); }
+        .btn.solid:hover { background: var(--spore); border-color: var(--spore); color: var(--soil); }
+        .btn.line { color: var(--cream); }
+        .btn.line:hover { background: var(--cream); color: var(--soil); }
+        .btn.dark { background: var(--soil); color: var(--cream); border-color: var(--soil); }
+        .btn.dark:hover { background: var(--gill); border-color: var(--gill); color: var(--cream); }
+        /* Photo framed like a mushroom cap: arched top, flat base */
+        .cap-photo { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 999px 999px 0 0; background: var(--gill); }
+
+        .stats { background: var(--cap-brown); color: var(--cream); }
+        .stats .wrap { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .stat { padding: 22px 24px 22px 0; display: flex; align-items: baseline; gap: 14px; }
+        .stat + .stat { border-left: 1px solid rgba(250, 246, 240, .3); padding-left: 24px; }
+        .stat b { font-family: var(--display); font-size: 40px; font-weight: 800; line-height: 1; }
+        .stat span { font-size: 15px; line-height: 1.35; }
+        @media (max-width: 820px) {
+            .hero .wrap { grid-template-columns: 1fr; }
+            .hero .photo { max-width: 340px; }
+            .buttons { margin-bottom: 8px; }
+            .stats .wrap { grid-template-columns: 1fr; }
+            .stat + .stat { border-left: 0; border-top: 1px solid rgba(250, 246, 240, .3); padding-left: 0; }
+        }
+
+        /* ---------- About ---------- */
+        .about .wrap { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 64px; align-items: center; }
+        .about img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 24px; background: var(--taupe); }
+        .about .text { display: grid; gap: 18px; font-size: 18px; }
+        .about .text .lead { font-family: var(--display); font-size: clamp(26px, 3.2vw, 36px); font-weight: 700; line-height: 1.2; color: var(--gill); }
+        @media (max-width: 820px) { .about .wrap { grid-template-columns: 1fr; gap: 32px; } .about img { max-width: 360px; } }
+
+        /* ---------- Work ---------- */
+        .work { background: var(--cream); }
+        .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 32px; }
+        .card { display: flex; flex-direction: column; gap: 14px; }
+        .card .shot { overflow: hidden; border-radius: 20px; background: var(--taupe); }
+        .card .shot img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; transition: transform .6s ease; }
+        .card:hover .shot img { transform: scale(1.04); }
+        .card .meta { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; color: var(--cap-brown); font-weight: 600; }
+        .card .shot .shot-band { position: relative; background: var(--taupe); color: #000000; padding: 10px 18px; font-size: 15px; }
+        .card h3 { font-size: 28px; font-weight: 700; letter-spacing: -.01em; }
+        .card p { color: var(--gill); }
+        .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+        .tag { font-size: 13px; font-weight: 500; padding: 3px 11px; border-radius: 999px; border: 1px solid var(--taupe); color: var(--gill); }
+        .card .more { font-weight: 600; }
+        .note { font-size: 14px; color: var(--gill); font-style: italic; }
+        @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+
+        .group-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 24px; margin: 72px 0 28px; padding-bottom: 14px; border-bottom: 1px solid var(--taupe); }
+        .section-head + .group-head { margin-top: 0; }
+        .group-head h3 { font-size: 26px; font-weight: 700; }
+        .group-head p { color: var(--cap-brown); font-weight: 500; font-size: 15px; }
+        .feature { margin-bottom: 36px; }
+        .feature-text { display: grid; gap: 24px; font-size: 18px; max-width: 980px; }
+
+        .also { margin-top: 64px; border-top: 1px solid var(--taupe); }
+        .also h3 { font-size: 22px; margin: 28px 0 8px; }
+        .also ul { list-style: none; margin: 0; padding: 0; }
+        .also li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; padding: 16px 0; border-bottom: 1px solid var(--taupe); font-size: 19px; font-weight: 500; }
+        .also li span { font-size: 14px; color: var(--cap-brown); font-weight: 600; }
+
+        /* ---------- What I bring (dark) ---------- */
+        .bring { background: var(--soil); color: var(--cream); }
+        .bring .section-title, .bring h3 { color: var(--cream); }
+        .bring .eyebrow { color: var(--spore); }
+        .bring .section-head p { color: #E9DFD3; }
+        .pillars { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 56px; }
+        .pillar { padding: 28px 0; border-top: 1px solid rgba(217, 198, 179, .35); display: grid; gap: 10px; }
+        .pillar h3 { font-size: 24px; font-weight: 700; }
+        .pillar p { color: #E9DFD3; }
+        .pillar .proof { font-size: 14px; color: var(--spore); }
+        @media (max-width: 760px) { .pillars { grid-template-columns: 1fr; } }
+
+        /* ---------- Experience ---------- */
+        .job { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 2fr); gap: 16px 56px; padding: 36px 0; border-top: 1px solid var(--taupe); }
+        .job:last-child { border-bottom: 1px solid var(--taupe); }
+        .job .when { font-weight: 600; color: var(--cap-brown); font-size: 15px; }
+        .job h3 { font-size: 28px; font-weight: 700; margin: 6px 0 4px; }
+        .job .org { color: var(--gill); }
+        .job ul { margin: 0; padding-left: 20px; display: grid; gap: 8px; }
+        @media (max-width: 760px) { .job { grid-template-columns: 1fr; } }
+
+        /* ---------- Skills, education ---------- */
+        .skills { background: var(--cream); }
+        .skill-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
+        .skill-grid h3 { font-size: 20px; margin-bottom: 14px; }
+        .skill-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+        @media (max-width: 900px) { .skill-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media (max-width: 480px) { .skill-grid { grid-template-columns: 1fr; } }
+
+        .edu-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 32px 56px; margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--taupe); }
+        .edu-grid h3 { font-size: 26px; margin: 8px 0 6px; }
+        .certs { list-style: none; margin: 12px 0 0; padding: 0; }
+        .certs li { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--taupe); }
+        .certs li span { color: var(--cap-brown); font-weight: 600; font-size: 15px; white-space: nowrap; }
+        @media (max-width: 760px) { .edu-grid { grid-template-columns: 1fr; } }
+
+        /* ---------- Contact (dark) ---------- */
+        .contact { background: var(--soil); color: var(--cream); padding-bottom: 40px; }
+        .contact .eyebrow { color: var(--spore); }
+        .contact h2 { color: var(--cream); font-size: clamp(40px, 7vw, 88px); font-weight: 800; letter-spacing: -.03em; margin: 14px 0 40px; max-width: 14ch; }
+        .contact h2 em { font-style: normal; color: var(--spore); }
+        .contact-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px 32px; padding-top: 28px; border-top: 1px solid rgba(217, 198, 179, .35); }
+        .contact-list div { display: grid; gap: 4px; min-width: 0; }
+        .contact-list small { color: var(--spore); font-size: 13px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; }
+        .contact-list a, .contact-list p { color: var(--cream); font-size: 16px; overflow-wrap: anywhere; }
+        .footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin-top: 72px; font-size: 14px; color: var(--spore); }
+
+        /* ---------- Fade-in (only when JavaScript runs, so nothing stays hidden) ---------- */
+        .fade { opacity: 0; transform: translateY(16px); transition: opacity .8s ease, transform .8s ease; }
+        .fade.show { opacity: 1; transform: none; }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .fade { opacity: 1; transform: none; transition: none; }
+            .card .shot img { transition: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ======================= TOP BAR ======================= -->
+<header class="topbar">
+    <div class="wrap">
+        <a class="logo" href="#top">Deepthi <span>Kavitha</span></a>
+        <ul class="nav">
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a class="cv" href="My Resume/Deepthi_Kavitha_Resume.pdf">Resume</a>
+    </div>
+</header>
+
+<main id="top">
+
+<!-- ======================= HERO ======================= -->
+<section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+        <div>
+            <p class="eyebrow">Front-end &amp; data visualization · Ocean and fisheries data</p>
+            <h1 id="hero-title">I love to make data <em>explorable</em> to everyone.</h1>
+            <p class="intro">I'm Deepthi, a recent Computer and Information Science master's graduate. I turn complex marine and environmental datasets into dashboards, filters and visual tools that researchers, stakeholders and curious people can actually use.</p>
+            <div class="buttons">
+                <a class="btn solid" href="#work">See my work</a>
+                <a class="btn line" href="#contact">Get in touch</a>
+            </div>
+        </div>
+        <div class="photo">
+            <img class="cap-photo" src="img/Profile%20Picture.jpeg" alt="Photo of Deepthi">
+        </div>
+    </div>
+</section>
+
+<div class="stats">
+    <div class="wrap">
+        <div class="stat"><b>70+</b><span>years of U.S. offshore fisheries landings explored in one dashboard</span></div>
+        <div class="stat"><b>8</b><span>interactive charts and filters built for fisheries research at ROSA</span></div>
+        <div class="stat"><b>M.S.</b><span>Computer &amp; Information Science, UMass Dartmouth, 2026</span></div>
+    </div>
+</div>
+
+<!-- ======================= ABOUT ======================= -->
+<section class="about" id="about" aria-labelledby="about-title">
+    <div class="wrap">
+        <!-- Replace with any photo you like -->
+        <img src="img/Profile%20Picture.jpeg" alt="Photo of Deepthi">
+        <div class="text">
+            <p class="eyebrow" id="about-title">About me</p>
+            <p class="lead">Ocean data matters to a lot of people, and most of them will never open a spreadsheet. I build the views that let them explore it.</p>
+            <p>I love working with environmental and ocean-related datasets and making them more accessible. At the Responsible Offshore Science Alliance, I cleaned FishFORWRD fisheries research data and designed Research Gaps Analysis dashboards that link research categories, Summarized Research Needs, funding sources and geography.</p>
+            <p>I care about the whole path: cleaning messy data, choosing the right chart, building filters people understand, and handing over tools that teams can keep updating without me.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= WORK ======================= -->
+<section class="work" id="work" aria-labelledby="work-title">
+    <div class="wrap">
+        <div class="section-head">
+            <div>
+                <p class="eyebrow">Selected work</p>
+                <h2 class="section-title" id="work-title">Data you can explore</h2>
+            </div>
+            <p>Interactive dashboards and web visualizations, ordered by how closely they relate to front-end web development.</p>
+        </div>
+
+        <!-- ---------- ROSA ---------- -->
+        <div class="group-head">
+            <h3>Built at ROSA</h3>
+            <p>Two interactive dashboards for the FishFORWRD fisheries research inventory · Publishing November 2026</p>
+        </div>
+        <div class="feature">
+            <div class="feature-text">
+                <p>Both dashboards work like small interactive web pages. Instead of reading a static report, visitors filter by research category, funding source, receptor, status, species or location, and the charts redraw for that selection, so the answer is on screen right away. I cleaned and structured the FishFORWRD data in Power Query Editor so every view draws on the same consistent records, and an automated Excel upload lets ROSA staff refresh and repopulate the visuals on their own.</p>
+            </div>
+        </div>
+        <div class="grid">
+            <article class="card">
+                <!-- Replace with a screenshot that doesn't show ROSA's private data -->
+                <div class="shot">
+                    <img src="img/FishFORWRD.png" alt="FishFORWRD">
+                    <div class="meta shot-band"><span>Dashboard 1 · ROSA</span><span>Publishing Nov 2026</span></div>
+                </div>
+                <h3>FishFORWRD Projects Dashboard</h3>
+                <p>Explores fisheries research projects through 8 interactive charts and filters. Visitors slice the projects by research category, funding source, receptor and location to see what has been studied and who funded it.</p>
+                <div class="tags"><span class="tag">Interactive filters</span><span class="tag">Power Query</span><span class="tag">Excel</span><span class="tag">Data cleaning</span></div>
+            </article>
+            <article class="card">
+                <!-- Replace with a screenshot that doesn't show ROSA's private data -->
+                <div class="shot">
+                    <img src="img/Research Gap Analysis.png" alt="Research Gap Analysis">
+                    <div class="meta shot-band"><span>Dashboard 2 · ROSA</span><span>Publishing Nov 2026</span></div>
+                </div>
+                <h3>Research Gaps Analysis Dashboard</h3>
+                <p>Connects research categories to Summarized Research Needs (SRNs) and the FishFORWRD projects that address them, filterable by funding source, status, species and geography, so readers can see where research needs are still open.</p>
+                <div class="tags"><span class="tag">Linked views</span><span class="tag">Dashboard design</span><span class="tag">Excel upload workflow</span></div>
+            </article>
+        </div>
+        <p class="note" style="margin-top:20px">Built for the Responsible Offshore Science Alliance. The dashboards will be published in November 2026. They and their data belong to ROSA, so they aren't reproduced on this site.</p>
+
+        <!-- ---------- Front-end ---------- -->
+        <div class="group-head">
+            <h3>Front-end &amp; interactive web visualization</h3>
+            <p>Browser-based tools in HTML, CSS and JavaScript with D3.js</p>
+        </div>
+        <div class="grid">
+            <article class="card">
+                <div class="shot"><img src="img/Salary Benchmarking.png" alt="Salary Benchmarking"></div>
+                <div class="meta"><span>Web visualization</span><span>D3.js v7</span></div>
+                <h3>Salary Benchmarking for Data Domain Jobs</h3>
+                <p>A multi-page D3 dashboard on data-job pay: a world map of salaries with year buttons (2020–2023) and hover tooltips, an employment-trends chart, pay by job type, and a parallel-coordinates view where clicking a legend item isolates one experience level.</p>
+                <div class="tags"><span class="tag">D3.js</span><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">CSV</span><span class="tag">Python</span></div>
+                <a class="more" href="https://github.com/Deep-Visualization/Salary-Benchmarking-for-Data-Domain-Jobs">View code on GitHub →</a>
+            </article>
+            <article class="card">
+                <div class="shot"><img src="img/Document Explorer.png" alt="Document Exploree"></div>
+                <div class="meta"><span>Web app · Text analysis</span><span>D3.js v7 · jQuery</span></div>
+                <h3>Document Explorer</h3>
+                <p>A browser tool for exploring a document collection. A Python pipeline clusters the documents and lays them out with MDS; the page shows a cluster bubble chart and an MDS scatter plot, with search, cluster filters, drag-to-reorder, a reading workspace and a dark mode.</p>
+                <div class="tags"><span class="tag">D3.js</span><span class="tag">jQuery</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">JSON</span></div>
+                <a class="more" href="https://github.com/Deep-Visualization/Document-visualization-tool">View code on GitHub →</a>
+            </article>
+            <article class="card">
+                <div class="shot"><img src="img/Nodes viz.png" alt="Nodes viz"></div>
+                <div class="meta"><span>Network visualization</span><span>D3.js · NetworkX</span></div>
+                <h3>Publication Network</h3>
+                <p>A force-directed graph of a Scopus publication network. Nodes are sized by connections, the view zooms, and hovering an author shows a tooltip and highlights collaborators from the same affiliations. NetworkX in Python prepares the JSON.</p>
+                <div class="tags"><span class="tag">D3.js</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">NetworkX</span><span class="tag">JSON</span></div>
+                <a class="more" href="https://github.com/Deep-Visualization/Force-Layout-Visualization">View code on GitHub →</a>
+            </article>
+            <article class="card">
+                <div class="shot"><img src="img/Offshore_fisheries.png" alt="Offshore_fisheries"></div>
+                <div class="meta"><span>Data app · Fisheries</span><span>Feb – Mar 2026</span></div>
+                <h3>Offshore Fisheries Analytics Dashboard</h3>
+                <p>An interactive Streamlit dashboard analyzing 70+ years of U.S. offshore fisheries landings, with dynamic filters for regional, species-level and long-term trends.</p>
+                <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Streamlit</span><span class="tag">Pandas</span><span class="tag">Plotly</span></div>
+            </article>
+        </div>
+
+        <!-- ---------- Web apps & ML ---------- -->
+        <div class="group-head">
+            <h3>Web apps &amp; machine learning</h3>
+            <p>Models served through web interfaces and dashboards</p>
+        </div>
+        <div class="grid">
+            <article class="card">
+                <div class="shot"><img src="img/Aviation Accident.png" alt="Aviation Accident"></div>
+                <div class="meta"><span>Full-stack project</span><span>Sep 2025 – Apr 2026</span></div>
+                <h3>Aviation Accident Risk Prediction</h3>
+                <p>A Flask web app where users enter flight details and get a damage-risk prediction, enriched with live weather from the OpenWeatherMap API. A Random Forest with SMOTE is trained on NTSB data, plus Streamlit and Power BI dashboards for accident trends.</p>
+                <div class="tags"><span class="tag">Flask</span><span class="tag">OpenWeatherMap API</span><span class="tag">Streamlit</span><span class="tag">Power BI</span><span class="tag">Scikit-learn</span></div>
+                <a class="more" href="https://github.com/Deep-Visualization/Aviation_Accident_Detection">View code on GitHub →</a>
+            </article>
+            <article class="card">
+                <div class="shot"><img src="img/credit card fraud detection.png" alt="credit card fraud detection"></div>
+                <div class="meta"><span>Machine learning</span><span>Sep – Nov 2025</span></div>
+                <h3>Credit Card Fraud Detection</h3>
+                <p>Fraud classification on 284,807 transactions where only 0.17% are fraud. Compares undersampling and SMOTE, and evaluates Logistic Regression, Random Forest and XGBoost with precision, recall, F1 and confusion matrices.</p>
+                <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">SMOTE</span><span class="tag">XGBoost</span></div>
+                <a class="more" href="https://github.com/Deep-Visualization/credit-card-fraud-detection">View code on GitHub →</a>
+            </article>
+        </div>
+
+        <div class="also">
+            <h3>Also on GitHub</h3>
+            <ul>
+                <li><a href="https://github.com/Deep-Visualization/vehicle-data-explorer">Vehicle Data Explorer</a><span>Class activity · linked scatter plots, brushing, focus + context</span></li>
+                <li><a href="https://github.com/Deep-Visualization">All repositories</a><span>github.com/Deep-Visualization</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= WHAT I BRING ======================= -->
+<section class="bring" aria-labelledby="bring-title">
+    <div class="wrap">
+        <div class="section-head">
+            <div>
+                <p class="eyebrow">For ocean data teams</p>
+                <h2 class="section-title" id="bring-title">What I bring</h2>
+            </div>
+            <p>Teams that build web tools for ocean observing, fisheries and community science need people who understand both the data and the people using it.</p>
+        </div>
+        <div class="pillars">
+            <div class="pillar">
+                <h3>Visualizations people can use</h3>
+                <p>Interactive charts, filters and dashboards designed for researchers, stakeholders and broader audiences, not just analysts.</p>
+                <p class="proof">ROSA dashboards · D3.js (Salary Benchmarking, Document Explorer, Publication Network) · Plotly · Power BI · Streamlit</p>
+            </div>
+            <div class="pillar">
+                <h3>Web and API foundations</h3>
+                <p>Browser tools in HTML, CSS and JavaScript that load CSV and JSON, and a Flask web app that combines an external weather API with a trained model to serve real-time predictions.</p>
+                <p class="proof">JavaScript · HTML · CSS · D3.js · jQuery · Flask · OpenWeatherMap API</p>
+            </div>
+            <div class="pillar">
+                <h3>Data that's ready to display</h3>
+                <p>Cleaning, structuring and querying large datasets so the interface can stay simple and fast.</p>
+                <p class="proof">Python · SQL · PostgreSQL · Pandas · Power Query · OpenRefine</p>
+            </div>
+            <div class="pillar">
+                <h3>Ocean and fisheries context</h3>
+                <p>Hands-on work with fisheries research data and long-term landings, and ongoing learning in ocean science.</p>
+                <p class="proof">ROSA FishFORWRD · 70+ years of landings data · RWSC Oceanographic Modeling Webinar</p>
+            </div>
+            <div class="pillar">
+                <h3>Tools teams can maintain</h3>
+                <p>I build with handoff in mind, so the people who own the data can keep it current.</p>
+                <p class="proof">Automated Excel upload workflow for ROSA staff</p>
+            </div>
+            <div class="pillar">
+                <h3>Version-controlled work</h3>
+                <p>Projects are kept and shared on GitHub.</p>
+                <p class="proof"><a href="https://github.com/Deep-Visualization" style="color:var(--spore)">github.com/Deep-Visualization</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= EXPERIENCE ======================= -->
+<section id="experience" aria-labelledby="exp-title">
+    <div class="wrap">
+        <div class="section-head">
+            <div>
+                <p class="eyebrow">Experience</p>
+                <h2 class="section-title" id="exp-title">Where I've worked</h2>
+            </div>
+        </div>
+        <div class="jobs">
+            <article class="job">
+                <div>
+                    <p class="when">Aug 2026 – Oct 2026 · Remote</p>
+                    <h3>Science Scholar Intern</h3>
+                    <p class="org">Responsible Offshore Science Alliance (ROSA)</p>
+                </div>
+                <ul>
+                    <li>Cleaned and structured FishFORWRD fisheries research data using Power Query Editor.</li>
+                    <li>Built 8 interactive charts and filters to explore projects by research category, funding source, receptor and location.</li>
+                    <li>Designed Research Gaps Analysis dashboards linking research categories, Summarized Research Needs (SRNs) and related FishFORWRD projects by funding source, status, species and geography.</li>
+                    <li>Developed an automated Excel upload workflow enabling ROSA staff to independently refresh and repopulate visualizations for ongoing publication.</li>
+                    <li>Translated complex fisheries research information into accessible visualizations for researchers, stakeholders and broader audiences.</li>
+                </ul>
+            </article>
+            <article class="job">
+                <div>
+                    <p class="when">Jun 2023 – Jul 2023 · Chennai, India</p>
+                    <h3>Data Intern</h3>
+                    <p class="org">Sunoida Solutions</p>
+                </div>
+                <ul>
+                    <li>Engineered optimized SQL queries using joins and aggregations to accelerate internal reporting workflows.</li>
+                    <li>Cleansed and transformed raw datasets to ensure data quality for downstream analytics workflows.</li>
+                    <li>Partnered with team members to streamline data retrieval efficiency and query performance.</li>
+                </ul>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= SKILLS + EDUCATION ======================= -->
+<section class="skills" id="skills" aria-labelledby="skills-title">
+    <div class="wrap">
+        <div class="section-head">
+            <div>
+                <p class="eyebrow">Toolkit</p>
+                <h2 class="section-title" id="skills-title">Skills</h2>
+            </div>
+        </div>
+        <div class="skill-grid">
+            <div>
+                <h3>Web &amp; Development</h3>
+                <ul><li>JavaScript</li><li>HTML</li><li>CSS</li><li>D3.js</li><li>jQuery</li><li>Flask</li></ul>
+            </div>
+            <div>
+                <h3>Data Visualization</h3>
+                <ul><li>Plotly</li><li>Power BI</li><li>Streamlit</li><li>Power Query</li><li>Excel</li><li>OpenRefine</li></ul>
+            </div>
+            <div>
+                <h3>Programming &amp; Data</h3>
+                <ul><li>Python</li><li>SQL</li><li>PostgreSQL</li><li>Pandas</li><li>NumPy</li><li>GitHub</li></ul>
+            </div>
+            <div>
+                <h3>Machine Learning</h3>
+                <ul><li>Linear Regression</li><li>Logistic Regression</li><li>Random Forest</li><li>SMOTE</li></ul>
+            </div>
+        </div>
+
+        <div class="edu-grid" id="education">
+            <div>
+                <p class="eyebrow">Education</p>
+                <h3>Master of Science in Computer and Information Science</h3>
+                <p>University of Massachusetts Dartmouth · North Dartmouth, MA</p>
+                <p class="when" style="color:var(--cap-brown);font-weight:600;margin-top:6px">May 2026</p>
+            </div>
+            <div>
+                <p class="eyebrow">Certifications &amp; professional development</p>
+                <ul class="certs">
+                    <li><a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_zwzqpHzyJT6GJpSeH_1752106145873_completion_certificate.pdf">Data Analytics Virtual Job Simulation – Deloitte Australia</a><span>Jul 2025</span></li>
+                    <li><a href="https://courses.cognitiveclass.ai/certificates/43845d7e9c75447897f3755678254205">Data Analysis with Python – IBM Cognitive Class</a><span>Apr 2025</span></li>
+                    <li><a href="https://courses.cognitiveclass.ai/certificates/d36530276e504dde8efa4e159d136e49">SQL and Relational Databases 101 – IBM Cognitive Class</a><span>Mar 2025</span></li>
+                    <li><p>Oceanographic Modeling Webinar – RWSC</p><span>Aug 2026</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= CONTACT ======================= -->
+<section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+        <p class="eyebrow">Contact</p>
+        <h2 id="contact-title">Let's make ocean data <em>explorable.</em></h2>
+        <div class="buttons" style="margin-top:0">
+            <a class="btn solid" href="mailto:gkdeepthigokuldhas@gmail.com">Email me</a>
+            <a class="btn line" href="My Resume/Deepthi_Kavitha_Resume.pdf">Download resume</a>
+        </div>
+        <div class="contact-list">
+            <div><small>Email</small><a href="mailto:gkdeepthigokuldhas@gmail.com">gkdeepthigokuldhas@gmail.com</a></div>
+            <div><small>Phone</small><a href="tel:+17696669909">+1 (769) 666-9909</a></div>
+            <div><small>LinkedIn</small><a href="https://www.linkedin.com/in/deepthigokuldhas/">linkedin.com/in/deepthigokuldhas</a></div>
+            <div><small>GitHub</small><a href="https://github.com/Deep-Visualization">github.com/Deep-Visualization</a></div>
+        </div>
+        <div class="footer">
+            <span>© 2026 Deepthi Kavitha</span>
+            <span>Authorized to work in the U.S.</span>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<script>
+    // Fade sections' content in as it scrolls into view.
+    var items = document.querySelectorAll(".section-head, .about .wrap > *, .card, .also, .pillar, .job, .skill-grid > div, .edu-grid > div, .contact h2, .contact-list");
+    if ("IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        items.forEach(function (el) {
+            el.classList.add("fade");
+            observer.observe(el);
+        });
+    }
+</script>
+
+</body>
+</html>
