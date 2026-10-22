@@ -157,6 +157,7 @@
         .job .when { font-weight: 600; color: var(--cap-brown); font-size: 15px; }
         .job h3 { font-size: 28px; font-weight: 700; margin: 6px 0 4px; }
         .job .org { color: var(--gill); }
+        .job .feature-link { display: inline-block; margin-top: 10px; font-size: 15px; font-weight: 600; }
         .job ul { margin: 0; padding-left: 20px; display: grid; gap: 8px; }
         @media (max-width: 760px) { .job { grid-template-columns: 1fr; } }
 
@@ -236,7 +237,7 @@
 <div class="stats">
     <div class="wrap">
         <div class="stat"><b>75</b><span>years of U.S. commercial fisheries landings (1950–2024) in one interactive web dashboard</span></div>
-        <div class="stat"><b>8</b><span>interactive charts and filters built for fisheries research at ROSA</span></div>
+        <div class="stat"><b>70</b><span>Summarized Research Needs checked against 273 projects in the Gaps Analysis dashboard I built for ROSA</span></div>
         <div class="stat"><b>M.S.</b><span>Computer &amp; Information Science, UMass Dartmouth, 2026</span></div>
     </div>
 </div>
@@ -249,7 +250,7 @@
         <div class="text">
             <p class="eyebrow" id="about-title">About me</p>
             <p class="lead">Ocean, environmental and scientific data matter to a lot of people, and most of them will never open a spreadsheet. I build the views that let them explore it.</p>
-            <p>I love working with ocean, environmental and scientific datasets and making them more accessible: fisheries research and landings, live weather, accident records and publication networks. At the Responsible Offshore Science Alliance, I cleaned FishFORWRD fisheries research data and designed Research Gaps Analysis dashboards that link research categories, Summarized Research Needs, funding sources and geography.</p>
+            <p>I love working with ocean, environmental and scientific datasets and making them more accessible: fisheries research and landings, live weather, accident records and publication networks. At the Responsible Offshore Science Alliance, I wrote Python pipelines that turn the FishFORWRD fisheries research workbook into two dashboards: one maps where offshore wind fisheries research is happening and what it covers, the other links 70 Summarized Research Needs to the projects addressing them, by region and receptor group, to show where gaps remain.</p>
             <p>I care about the whole path: cleaning messy data, choosing the right chart, building filters people understand, and handing over tools that teams can keep updating without me.</p>
         </div>
     </div>
@@ -273,7 +274,8 @@
         </div>
         <div class="feature">
             <div class="feature-text">
-                <p>Both dashboards work like small interactive web pages. Instead of reading a static report, visitors filter by research category, funding source, receptor, status, species or location, and the charts redraw for that selection, so the answer is on screen right away. I cleaned and structured the FishFORWRD data in Power Query Editor so every view draws on the same consistent records, and an automated Excel upload lets ROSA staff refresh and repopulate the visuals on their own.</p>
+                <p>FishFORWRD, ROSA's Fish and Fisheries OffshoRe Wind Research Database, catalogs the research and monitoring projects on fish and fisheries and offshore wind along the U.S. Atlantic coast. I designed and developed two dashboards that turn it into something funders, researchers, offshore wind developers and fishing communities can explore themselves: one shows where research is happening and what it covers, the other shows which research needs are still unanswered.</p>
+                <p>Both are standalone web pages built with HTML, CSS and JavaScript (the first also uses Plotly) that open in any browser. Instead of reading a static report, visitors filter by location, offshore wind technology, research category, receptor group, project type or gap status, and every chart and count redraws for that selection. Python scripts (pandas, openpyxl, Plotly) read the FishFORWRD Excel workbook, standardize its values and build each dashboard as one self-contained page, so when ROSA updates the database, staff replace the workbook, rerun the scripts and the visuals repopulate on their own.</p>
             </div>
         </div>
         <div class="grid">
@@ -283,9 +285,10 @@
                     <img src="img/FishFORWRD.png" alt="FishFORWRD">
                     <div class="meta shot-band"><span>Dashboard 1 · ROSA</span><span>Publishing Nov 2026</span></div>
                 </div>
-                <h3>FishFORWRD Projects Dashboard</h3>
-                <p>Explores fisheries research projects through 8 interactive charts and filters. Visitors slice the projects by research category, funding source, receptor and location to see what has been studied and who funded it.</p>
-                <div class="tags"><span class="tag">Interactive filters</span><span class="tag">Power Query</span><span class="tag">Excel</span><span class="tag">Data cleaning</span></div>
+                <h3>Research Portfolio Characterization</h3>
+                <p>Shows where offshore wind fisheries science is concentrated and how 273 projects break down. An interactive map sizes each research location by its number of projects and filters by offshore wind technology (fixed, floating or both). Tabs then cover research category, completion status, projects active each year, methodology, receptor group, a methodology × receptor group heatmap that drills into any one receptor group, a research-flow diagram, and the 46 funders by type, where selecting a type lists its funders.</p>
+                <p>The category chart can play an animation of research growing from 2012 to 2026, filtered by start year and by whether a project is part of a developer's monitoring plan. Categories, methods and receptor groups have hover definitions, and the main charts offer a "View as table" option.</p>
+                <div class="tags"><span class="tag">Plotly</span><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Interactive map</span><span class="tag">Python</span><span class="tag">pandas</span></div>
             </article>
             <article class="card">
                 <!-- Replace with a screenshot that doesn't show ROSA's private data -->
@@ -294,8 +297,9 @@
                     <div class="meta shot-band"><span>Dashboard 2 · ROSA</span><span>Publishing Nov 2026</span></div>
                 </div>
                 <h3>Research Gaps Analysis Dashboard</h3>
-                <p>Connects research categories to Summarized Research Needs (SRNs) and the FishFORWRD projects that address them, filterable by funding source, status, species and geography, so readers can see where research needs are still open.</p>
-                <div class="tags"><span class="tag">Linked views</span><span class="tag">Dashboard design</span><span class="tag">Excel upload workflow</span></div>
+                <p>Checks 70 Summarized Research Needs (SRNs), consolidated from 300+ research needs in 17 prioritization documents by agencies, the fishing industry and regional management bodies, against the research already underway. Each SRN is a card with a gap-status label and six shaded boxes for the regions from the Gulf of Maine to the South Atlantic, darker where more projects cover it.</p>
+                <p>Opening a card shows a region × receptor group grid that marks every combination with no project as a GAP, with the covering projects on hover. Picking a location recalculates every need's status, and needs can be filtered by gap status (no projects, some coverage, addressed), category, receptor group and project type, searched, or listed in a sortable table.</p>
+                <div class="tags"><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Linked views</span><span class="tag">Dashboard design</span><span class="tag">Python</span><span class="tag">openpyxl</span></div>
             </article>
         </div>
         <p class="note" style="margin-top:20px">Built for the Responsible Offshore Science Alliance. The dashboards will be published in November 2026. They and their data belong to ROSA, so they aren't reproduced on this site.</p>
@@ -410,7 +414,7 @@
             <div class="pillar">
                 <h3>Tools teams can maintain</h3>
                 <p>I build with handoff in mind, so the people who own the data can keep it current.</p>
-                <p class="proof">Automated Excel upload workflow for ROSA staff</p>
+                <p class="proof">Python scripts that rebuild ROSA's dashboards from the updated FishFORWRD workbook</p>
             </div>
             <div class="pillar">
                 <h3>Version-controlled work</h3>
@@ -436,13 +440,15 @@
                     <p class="when">Aug 2026 – Oct 2026 · Remote</p>
                     <h3>Science Scholar Intern</h3>
                     <p class="org">Responsible Offshore Science Alliance (ROSA)</p>
+                    <a class="feature-link" href="https://www.rosascience.org/science-scholars/" target="_blank" rel="noopener">Featured on the ROSA Science Scholars page →</a>
                 </div>
                 <ul>
-                    <li>Cleaned and structured FishFORWRD fisheries research data using Power Query Editor.</li>
-                    <li>Built 8 interactive charts and filters to explore projects by research category, funding source, receptor and location.</li>
-                    <li>Designed Research Gaps Analysis dashboards linking research categories, Summarized Research Needs (SRNs) and related FishFORWRD projects by funding source, status, species and geography.</li>
-                    <li>Developed an automated Excel upload workflow enabling ROSA staff to independently refresh and repopulate visualizations for ongoing publication.</li>
-                    <li>Translated complex fisheries research information into accessible visualizations for researchers, stakeholders and broader audiences.</li>
+                    <li>Built Python data pipelines using pandas, openpyxl, and Plotly to process FishFORWRD, ROSA's Excel database of 273 offshore wind fish and fisheries research and monitoring projects along the U.S. Atlantic coast, standardizing values and generating self-contained dashboard pages.</li>
+                    <li>Designed and developed the Research Portfolio Characterization dashboard, combining an interactive research-location map, time-series animation, category and status charts, methodology and receptor-group analysis, a heatmap, funder breakdowns, and a JavaScript Sankey diagram connecting research categories, locations, and receptor groups.</li>
+                    <li>Implemented interactive exploration features, including filters for offshore wind technology, project start year, and developer monitoring plans; drill-downs from heatmap cells and funder categories; and table views that let users inspect the underlying information.</li>
+                    <li>Developed the Research Gaps Analysis dashboard in JavaScript, evaluating 70 Summarized Research Needs (SRNs) against FishFORWRD projects across six Atlantic regions and receptor groups, with region-specific gap statuses and visual indicators for research needs without project coverage.</li>
+                    <li>Created a repeatable data-refresh workflow so ROSA staff can update the dashboards by replacing the Excel workbook and rerunning the scripts. Derived project status and active years from year columns, retrieved hover definitions from the workbook, and documented the sheet and column requirements for each visualization.</li>
+                    <li>Made complex research data easier to interpret through step-by-step usage guides, contextual definitions, and plain-language explanations for funders, researchers, offshore wind developers, and fishing communities.</li>
                 </ul>
             </article>
             <article class="job">
@@ -513,7 +519,7 @@
 <section class="contact" id="contact" aria-labelledby="contact-title">
     <div class="wrap">
         <p class="eyebrow">Contact</p>
-        <h2 id="contact-title">Let's make scientific data <em>explorable.</em></h2>
+        <h2 id="contact-title">Let's make scientific data <em>easier to explore.</em></h2>
         <div class="buttons" style="margin-top:0">
             <a class="btn solid" href="mailto:gkdeepthigokuldhas@gmail.com">Email me</a>
             <a class="btn line" href="My Resume/Deepthi_Kavitha_Resume.pdf">Download resume</a>
